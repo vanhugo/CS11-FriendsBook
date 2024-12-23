@@ -30,6 +30,9 @@ public class Friend {
         bw.write(age + ",");
         bw.write(cheese + "");
         bw.write("\r"); // write carriage return (new line)
+
+        bw.close();
+        fw.close();
     }
 
     // override the toString() method to return the friend's name when the object is printed

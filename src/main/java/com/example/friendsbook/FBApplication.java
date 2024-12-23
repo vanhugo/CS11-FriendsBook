@@ -16,7 +16,7 @@ public class FBApplication extends Application {
         // create a scene with the loaded fxml, and set its dimensions (width: 400, height: 300)
         Scene scene = new Scene(fxmlLoader.load(), 400, 300);
         // set the title of the application window
-        stage.setTitle("Hello!");
+        stage.setTitle("FriendsBook - Improved");
         // set the scene to the stage
         stage.setScene(scene);
         // display the stage

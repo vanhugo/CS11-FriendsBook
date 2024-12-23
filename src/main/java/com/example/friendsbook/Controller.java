@@ -54,6 +54,7 @@ public class Controller {
                 f.writeToFile(filename);
             }
         }
+
         // clear the friend list after saving
         friendList.getItems().clear();
     }
@@ -77,12 +78,36 @@ public class Controller {
         }
     }
 
+    @FXML
+    public void onDeleteButtonPressed() {
+        // Get the index of the selected friend in the list
+        int exFriend = friendList.getSelectionModel().getSelectedIndex();
+
+        // Remove the selected friend from the list
+        friendList.getItems().remove(exFriend);
+
+        // Clear the displayed name, age, and favorite cheese fields
+        displayName.setText("");
+        displayAge.setText("");
+        displayCheese.setText("");
+    }
+
+
     // method to display details of the selected friend in the labels
     public void displayFriend(MouseEvent mouseEvent) {
         Friend temp;
         temp = friendList.getSelectionModel().getSelectedItem();
-        displayName.setText(temp.name);
-        displayAge.setText(temp.age);
-        displayCheese.setText(temp.cheese);
+        if (temp != null) {
+            displayName.setText(temp.name);
+            displayAge.setText(temp.age);
+            displayCheese.setText(temp.cheese);
+        }
+        else
+        {
+            displayName.setText("");
+            displayAge.setText("");
+            displayCheese.setText("");
+        }
+
     }
 }
